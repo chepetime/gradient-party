@@ -1,88 +1,13 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br />
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-        >vue-cli documentation</a
-      >.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
-          target="_blank"
-          rel="noopener"
-          >babel</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
-          target="_blank"
-          rel="noopener"
-          >eslint</a
-        >
-      </li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li>
-        <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
-      </li>
-      <li>
-        <a href="https://forum.vuejs.org" target="_blank" rel="noopener"
-          >Forum</a
-        >
-      </li>
-      <li>
-        <a href="https://chat.vuejs.org" target="_blank" rel="noopener"
-          >Community Chat</a
-        >
-      </li>
-      <li>
-        <a href="https://twitter.com/vuejs" target="_blank" rel="noopener"
-          >Twitter</a
-        >
-      </li>
-      <li>
-        <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
-      </li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li>
-        <a href="https://router.vuejs.org" target="_blank" rel="noopener"
-          >vue-router</a
-        >
-      </li>
-      <li>
-        <a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-devtools#vue-devtools"
-          target="_blank"
-          rel="noopener"
-          >vue-devtools</a
-        >
-      </li>
-      <li>
-        <a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener"
-          >vue-loader</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-          rel="noopener"
-          >awesome-vue</a
-        >
-      </li>
-    </ul>
+  <div class="page">
+    <div class="page_scroll">
+      <div class="card card--long card--dawn"></div>
+      <div class="card card--daylight"></div>
+      <div class="card card--long card--daylight-sunset"></div>
+      <div class="card card--small card-sunset-orange"></div>
+      <div class="card card--long card--sunset"></div>
+      <div class="card card--night"></div>
+    </div>
   </div>
 </template>
 
@@ -90,25 +15,137 @@
 export default {
   name: "HelloWorld",
   props: {
-    msg: String
-  }
+    msg: String,
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
+.page {
+  display: flex;
+  overflow: hidden;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  padding: 2rem;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.page_scroll {
+  overflow: scroll;
+
+  flex: 1;
+
+  width: 100%;
+  height: 100%;
+
+  background: black;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.card {
+  position: relative;
+
+  display: flex;
+  overflow: hidden;
+
+  align-items: flex-end;
+
+  width: 100%;
+  height: 100vh;
 }
-a {
-  color: #42b983;
+
+.card--long {
+  height: 200vw;
+}
+
+.card--small {
+  height: 25vw;
+}
+
+.card--night {
+  background-image: linear-gradient(
+    0deg,
+    hsl(0, 0%, 0%) 0%,
+    hsla(0, 0%, 0%, 0.738) 19%,
+    hsla(0, 0%, 0%, 0.541) 34%,
+    hsla(0, 0%, 0%, 0.382) 47%,
+    hsla(0, 0%, 0%, 0.278) 56.5%,
+    hsla(0, 0%, 0%, 0.194) 65%,
+    hsla(0, 0%, 0%, 0.126) 73%,
+    hsla(0, 0%, 0%, 0.075) 80.2%,
+    hsla(0, 0%, 0%, 0.042) 86.1%,
+    hsla(0, 0%, 0%, 0.021) 91%,
+    hsla(0, 0%, 0%, 0.008) 95.2%,
+    hsla(0, 0%, 0%, 0.002) 98.2%,
+    hsla(0, 0%, 0%, 0) 100%
+  );
+  background-color: #161836;
+}
+
+.card--sunset {
+  background: linear-gradient(0deg, #161836 0%, #382e4b 20%, #f98056 60%);
+}
+
+.card-sunset-orange {
+  background-color: #e9e28b;
+
+  background-image: linear-gradient(
+    0deg,
+    hsl(15, 93%, 66%) 0%,
+    hsl(15, 93%, 66%, 0.738) 19%,
+    hsl(15, 93%, 66%, 0.541) 34%,
+    hsl(15, 93%, 66%, 0.382) 47%,
+    hsl(15, 93%, 66%, 0.278) 56.5%,
+    hsl(15, 93%, 66%, 0.194) 65%,
+    hsl(15, 93%, 66%, 0.126) 73%,
+    hsl(15, 93%, 66%, 0.075) 80.2%,
+    hsl(15, 93%, 66%, 0.042) 86.1%,
+    hsl(15, 93%, 66%, 0.021) 91%,
+    hsl(15, 93%, 66%, 0.008) 95.2%,
+    hsl(15, 93%, 66%, 0.002) 98.2%,
+    hsl(15, 93%, 66%, 0) 100%
+  );
+}
+
+.card--daylight-sunset {
+  background: linear-gradient(
+    180deg,
+    #5c7cc2 0%,
+    #5c7cc2 19%,
+    #6a86bc 34%,
+    #7891b7 47%,
+    #869bb1 56.5%,
+    #94a5ac 65%,
+    #a2afa7 73%,
+    #b1b9a1 80.2%,
+    #bfc39c 86.1%,
+    #cdce96 91%,
+    #dbd891 95.2%,
+    #e9e28b 98.2%,
+    #e9e28b 100%
+  );
+}
+
+.card--daylight {
+  background: linear-gradient(
+    0deg,
+    #5c7cc2 0%,
+    #6d9ed7 34%,
+    #6bafd2 67%,
+    #a4c8dc 100%
+  );
+}
+.card--dawn {
+  background: linear-gradient(
+    0deg,
+    #a4c8dc 0%,
+    #b4d9e1 38%,
+    #d6cbca 58%,
+    #eabc96 79%,
+    #db8876 100%
+  );
 }
 </style>
