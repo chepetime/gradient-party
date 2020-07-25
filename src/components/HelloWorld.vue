@@ -62,7 +62,7 @@ export default {
 }
 
 .card--small {
-  height: 25vh;
+  height: 50vh;
 }
 
 .card--night {
