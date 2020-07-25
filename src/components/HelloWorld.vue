@@ -58,11 +58,11 @@ export default {
 }
 
 .card--long {
-  height: 200vw;
+  height: 200vh;
 }
 
 .card--small {
-  height: 25vw;
+  height: 25vh;
 }
 
 .card--night {
