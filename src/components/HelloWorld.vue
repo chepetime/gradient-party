@@ -54,15 +54,7 @@ export default {
   align-items: flex-end;
 
   width: 100%;
-  height: 100vh;
-}
-
-.card--long {
   height: 200vh;
-}
-
-.card--small {
-  height: 50vh;
 }
 
 .card--night {
